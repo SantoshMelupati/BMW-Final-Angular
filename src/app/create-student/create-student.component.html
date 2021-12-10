@@ -1,0 +1,83 @@
+
+ <div class="container1" ng-app="">
+  <div class="center">
+
+<div [hidden]="submitted" >
+  <h3 style="color: azure;">Add Student</h3>
+  <form (ngSubmit)="onSubmit()" name="studentForm">
+    
+    <label for="name"><b>Student Name</b></label><br>
+    <input type="text" placeholder="Enter Name"  name="name" ng-model="name" [(ngModel)]="addstudent.name"  required><br>
+    <span ng-show="studentForm.name.$touched && studentForm.name.$invalid" style="color: darkred;"><span ng-show="studentForm.name.$error.required">Student name is required.</span></span><br>
+   
+    
+
+    <label for="mailid"><b>E-Mail</b></label><br>
+    <input type="email" placeholder="Enter MailId"  name="mailid" ng-model="mailid" [(ngModel)]="addstudent.mailid" required><br>
+    <span ng-show="studentForm.mailid.$dirty && studentForm.mailid.$invalid" style="color: darkred;"><span ng-show="studentForm.mailid.$error.required">Student email is required.</span></span><br>
+   
+    <label for="phoneno"><b>Phone No</b></label><br>
+    <input type="text" placeholder="Enter Phone No" name="phoneno" [(ngModel)]="addstudent.phoneno" required><br>
+
+    
+    <label for="dob"><b>Date of Birth</b></label><br>
+    <input type="date" placeholder="Enter Date of Birth" name="dob" [(ngModel)]="addstudent.dob"required><br>
+
+   
+    <div>
+      <label for="gender">Gender</label><br>
+      <input type="radio"  id="gender1" [(ngModel)]="addstudent.gender" name="gender" value="Male">&nbsp;Male<br>
+      <input type="radio"  id="gender2" [(ngModel)]="addstudent.gender" name="gender" value="Female">&nbsp;Female
+    </div><br>
+    <div class="form-group">
+      <label for="department">Department</label><br>
+      <select id="departments" name="department" [(ngModel)]="addstudent.deptId">
+        <option value="100">CSE</option>
+        <option value="101">ECE</option>
+        <option value="102">EEE</option>
+        <option value="103">MECH</option>
+        <option value="104">AERO</option>
+        <option value="105">PETROLIUM</option>
+        <option value="106">IT</option>
+        <option value="107">CHEMICAL</option>
+        <option value="110">MARINE</option>
+        </select>
+     
+      
+    </div>
+    <div class="form-group">
+       <label for="College">College</label><br>
+       <select id="College" name="College" [(ngModel)]="addstudent.collegeId">
+        <option value="201">PSG</option>
+        <option value="202">NIT</option>
+        <option value="200">SRM</option>
+        </select>
+     
+      
+    </div>
+
+    <div class="form-group">
+    <label for="interest" >Areas of interest</label><br>
+    <input type="checkbox" id="iot" name="areaofinterest1"   [(ngModel)]="addstudent.areaofinterest1" value="iot">
+    &nbsp;<label for="iot" style="font-weight: normal">Internet of things</label><br>
+    <input type="checkbox" id="iot" name="areaofinterest2"   [(ngModel)]="addstudent.areaofinterest2" value="al">
+    &nbsp;<label for="iot" style="font-weight: normal">Artificial Inteligence</label><br>
+    <input type="checkbox" id="iot" name="areaofinterest3"   [(ngModel)]="addstudent.areaofinterest3" value="ml">
+    &nbsp;<label for="iot" style="font-weight: normal">Machine Learning</label><br>
+    <br>
+   
+    </div>
+
+    <button type="submit" class="btn btn-success" ng-disabled="studentForm.name.$touched && studentForm.name.$invalid ||  
+    studentForm.mailid.$dirty && studentForm.mailid.$invalid">Submit</button>
+   
+  </form>
+</div>
+
+<div  class="hiddenclass" [hidden]="!submitted">
+  <h4 >Student added successfully!</h4>
+   <button (click)="list()" class="btn btn-primary" style="margin-left: 15%; width: 15%;">Back to Home</button><br><br><br><br>
+</div>
+</div>
+</div>
+<br><br>

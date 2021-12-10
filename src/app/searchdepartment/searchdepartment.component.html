@@ -1,0 +1,80 @@
+<div style="margin-bottom: 480px; text-align: center;" >
+  <h2> Search By Department</h2><br><br>
+  <form (ngSubmit)="onSubmit()" name="studentForm">
+    <div class="form-group">
+      <label for="College">Select College</label><br>
+      <select id="College" name="College" [(ngModel)]="deptCollege.collegeId">
+       <option value="201">PSG</option>
+       <option value="202">NIT</option>
+       <option value="200">SRM</option>
+       </select>
+    
+     
+   </div>
+    
+    <div class="form-group">
+      <label for="department">Select Department</label><br>
+      <select id="departments" name="department" [(ngModel)]="deptCollege.deptId">
+        <option value="100">CSE</option>
+        <option value="101">ECE</option>
+        <option value="102">EEE</option>
+        <option value="103">MECH</option>
+        <option value="104">AERO</option>
+        <option value="105">PETROLIUM</option>
+        <option value="106">IT</option>
+        <option value="107">CHEMICAL</option>
+        <option value="110">MARINE</option>
+      </select>
+     
+      
+    </div>
+    
+
+    
+
+    <button type="submit" class="btn btn-success" ng-disabled="studentForm.name.$touched && studentForm.name.$invalid ||  
+    studentForm.mailid.$dirty && studentForm.mailid.$invalid">Submit</button>
+   
+  </form>
+    
+
+    <div *ngIf="student">
+        <div style="margin-bottom: 340px;" >
+          <h3 class="heading">Search Result</h3>
+            <table id="students">
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Phone No</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Department </th>
+                <th>College </th>
+                <th colspan="3">Area of Interest</th>
+                
+              </tr>
+              
+                <tr *ngFor="let student of student| async">
+                  <td>{{student.id}}</td>
+                  <td>{{student.name}}</td>
+                  <td>{{student.mailid}}</td>
+                  <td>{{student.phoneno}}</td>
+                  <td>{{student.dob}}</td>
+                  <td>{{student.gender}}</td>
+                  <td>{{student.department.dept_name}}</td>
+                  <td>{{student.college.name}}</td>
+                  <td>{{student.areaofinterest1}}</td>
+                  <td>{{student.areaofinterest2}}</td>
+                  <td>{{student.areaofinterest3}}</td>
+                
+                </tr>
+
+              
+            </table>
+            <div style="text-align: left;">
+            <button (click)="list()" class="btn btn-primary" style="margin-left: 15%; width: 15%;" >Back to Home</button></div>
+            </div>
+            </div>
+ </div>
+ 

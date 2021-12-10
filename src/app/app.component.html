@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="Success.jsp"><img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/wlooskxh8w7ibtnhxdw0"></a>
+      <a class="navbar-brand" >Welcome&nbsp;</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="main" class="nav-link" routerLinkActive="active">Home</a></li>
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colleges<span class="caret"></span> </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-submenu"><a class="dropdown-item" >SRM College Technology</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item"  href="/college/200">Home</a></li>
+                <li><a class="dropdown-item"  href="/department/200">Departments</a></li>
+             </ul>
+          </li>
+            <li class="dropdown-submenu"><a class="dropdown-item" >PSG Institute of Technology</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/college/201">Home</a></li>
+                <li><a class="dropdown-item" href="/department/201">Departments</a></li>
+             </ul>
+           </li>
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" >National Institute of Technology</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/college/202">Home</a></li>
+                    <li><a class="dropdown-item" href="/department/202">Departments</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+      
+    </ul>
+
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="index.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<div class="footer-copyright text-center py-3 footerclass" ><div class="innercontent">© 2021 Copyright
+  <a  href="https://expleogroup.com/">@Expleo</a></div>
+</div>

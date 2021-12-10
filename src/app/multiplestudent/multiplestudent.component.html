@@ -1,0 +1,26 @@
+
+ <div style="margin-bottom: 360px;" class="container1" ng-app="">
+    <div class="center">
+        <h3 style="color: beige;">Add Multiple Students</h3><br><br>
+       
+      <div class="row">
+        <div class="col-8">
+            <label>Upload your CSV file here</label><br>
+            <label class="btn btn-default p-0">
+                <input type="file" (change)="selectFile($event)"/>
+            </label>
+        </div>
+    <br><br>
+        <div class="col-4">
+            <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+                Upload file
+            </button>
+        </div>
+    </div>
+    <br>
+    <div style="margin-right: 480px;" *ngIf="message" class="alert alert-success" role="alert">{{ message }}</div>
+    <div style="margin-right: 480px;" *ngIf="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</div>
+
+  </div>
+  </div>
+  <br><br>

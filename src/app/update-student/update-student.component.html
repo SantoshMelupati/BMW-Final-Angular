@@ -1,0 +1,25 @@
+
+<div style="margin-bottom: 340px;">
+<h3 class="heading">Student Details</h3>
+<table id="students">
+  <tr>
+    <th>Student ID</th>
+    <th>Name</th>
+    <th>E-Mail</th>
+    <th>Actions</th>
+    
+  </tr>
+  
+    <tr *ngFor="let student of students | async">
+      <td>{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.mailid}}</td>
+      
+      
+      <td>
+        <button (click)="updateStudent(student.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+    </td>
+    </tr>
+  
+</table>
+<button (click)="list()" class="btn btn-primary" style="margin-left: 15%; width: 15%;">Back to Home</button></div>

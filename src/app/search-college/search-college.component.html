@@ -1,0 +1,66 @@
+
+<div style="margin-bottom: 480px; text-align: center;" >
+  <h2>Search by College </h2><br><br>
+    <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+
+      <div class="form-group">
+        <label for="College"><h3>Select College</h3></label> <br> 
+        <select id="College" formControlName="clge" name = "clge" class="fortextbox">  
+            
+            <option disabled>Select College</option>  
+            <option value="200">SRM</option> 
+            <option value="201">PSG</option> 
+            <option value="202">National </option> 
+            
+
+        </select><br><br>
+       <!--<input type = "submit"  [disabled] = "!formdata.valid" class = "forsubmit" 
+          value = "Search">-->
+          <button type="submit" class="btn btn-success" >Search</button>
+      </div>
+         
+
+    </form>
+    
+
+    <div *ngIf="student">
+        <div style="margin-bottom: 340px;">
+          <h3 class="heading">Search Result</h3>
+            <table id="students">
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Phone No</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Department </th>
+                <th>College </th>
+                <th colspan="3">Area of Interest</th>
+                
+              </tr>
+              
+                <tr *ngFor="let student of student| async">
+                  <td>{{student.id}}</td>
+                  <td>{{student.name}}</td>
+                  <td>{{student.mailid}}</td>
+                  <td>{{student.phoneno}}</td>
+                  <td>{{student.dob}}</td>
+                  <td>{{student.gender}}</td>
+                  <td>{{student.department.dept_name}}</td>
+                  <td>{{student.college.name}}</td>
+                  <td>{{student.areaofinterest1}}</td>
+                  <td>{{student.areaofinterest2}}</td>
+                  <td>{{student.areaofinterest3}}</td>
+                  
+                
+                </tr>
+
+              
+            </table>
+            <div style="text-align: left;">
+            <button (click)="list()" class="btn btn-primary" style="margin-left: 15%; width: 15%; text-align: center;" >Back to Home</button></div>
+            </div>
+            </div>
+ </div>
+ 

@@ -1,0 +1,76 @@
+
+ <div class="container1" >
+  <div class="center">
+<h3 style="color: azure;">Update Student</h3>
+<div [hidden]="submitted" >
+  <form (ngSubmit)="onSubmit()">
+
+    <label for="name"><b>Student Name</b></label><br>
+    <input type="text" placeholder="Enter Name"  [(ngModel)]="student.name" name="name" required><br>
+
+    <label for="mailid"><b>E-Mail</b></label><br>
+    <input type="email" placeholder="Enter MailId"  name="mailid" [(ngModel)]="student.mailid" required><br>
+
+   
+    <label for="phoneno"><b>Phone No</b></label><br>
+    <input type="text" placeholder="Enter Phone No" name="phoneno" [(ngModel)]="student.phoneno" required><br>
+
+    
+    <label for="dob"><b>Date of Birth</b></label><br>
+    <input type="date" placeholder="Enter Date of Birth" name="dob" [(ngModel)]="student.dob" required><br>
+
+   
+    <div>
+      <label for="gender">Gender</label><br>
+      <input type="radio"  id="gender1" [(ngModel)]="student.gender" name="gender" value="Male">&nbsp;Male<br>
+      <input type="radio"  id="gender2" [(ngModel)]="student.gender" name="gender" value="Female">&nbsp;Female
+    </div><br>
+    <div class="form-group">
+      <label for="department">Department</label><br>
+      <select id="departments" name="department" [(ngModel)]="student.department.dept_id">
+        <option value="100">CSE</option>
+        <option value="102">EEE</option>
+        <option value="101">ECE</option>
+        <option value="103">MECH</option>
+        <option value="104">AERO</option>
+        <option value="106">IT</option>
+        <option value="105">PETROLIUM</option>
+        <option value="107">CHEMICAL</option>
+        <option value="110">MARINE</option>
+        </select>
+     
+      
+    </div>
+    <div class="form-group">
+      <label for="college">College</label><br>
+      <select id="College" name="college" [(ngModel)]="student.college.coolegeCode">
+        <option value="200">SRM College of Technology</option>
+        <option value="201">PSG Institute of Technology</option>
+        <option value="202">National Institute of Technology</option>
+        </select>
+     
+      
+    </div>
+    <div class="form-group">
+    <label for="interest" >Areas of interest</label><br>
+    <input type="checkbox" id="iot" name="areaofinterest1"   [(ngModel)]="student.areaofinterest1" value="iot">
+    &nbsp;<label for="iot" style="font-weight: normal">Internet of things</label><br>
+    <input type="checkbox" id="ai" name="areaofinterest2"   [(ngModel)]="student.areaofinterest2" value="ai">
+    &nbsp;<label for="iot" style="font-weight: normal">Artificial Inteligence</label><br>
+    <input type="checkbox" id="ml" name="areaofinterest3"   [(ngModel)]="student.areaofinterest3" value="ml">
+    &nbsp;<label for="iot" style="font-weight: normal">Machine Learning</label><br>
+    <br>
+   
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+</div>
+</div>
+<br><br>

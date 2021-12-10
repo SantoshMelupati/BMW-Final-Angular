@@ -1,0 +1,50 @@
+
+<div class="college">
+  <div id="rcorners2">
+     <br>
+     <p style="text-align: center;font-size: 22px;"><b><div *ngIf="college">
+      <h3 style=color:beige;>{{college.name}}</h3>
+     </div></b>
+  </p>
+    <hr>
+     <br>
+     <h5 style="padding-left: 690px;font-weight: bold;">College code :&nbsp;<span style="font-weight: normal;">{{college.coolegeCode}}</span></h5>
+     <br>
+     
+      <table class="collegetable" >
+
+        <tr *ngIf="college">
+          <td><b>Affiliated to</b></td>
+          <td>{{college.affiliatedTo}}</td>
+         
+        </tr>
+        <tr *ngIf="college">
+          <td><b>Approved by</b></td>
+          <td> {{college.approvedBy}}</td>
+        </tr>
+        <tr *ngIf="college">
+          <td><b>Established Year</b></td>
+          <td> {{college.establishedYear}}</td>
+        </tr>
+        <tr *ngIf="college">
+          <td><b>Type of Institution</b></td>
+          <td>{{college.type}}</td>
+          
+        </tr>
+        <tr *ngIf="college">
+          <td><b>Category</b></td>
+          <td>{{college.category}}</td>
+        
+        </tr>
+        <tr *ngIf="college">
+          <td><b>Minority Institution</b> 
+            
+      </td>
+          <td>{{college.minorityInstitution}}</td>
+          
+        </tr>
+      </table>
+     
+    </div>
+    <button (click)="list()" class="btn btn-primary" style="margin-left: 15%; width: 15%;">Main Home</button>
+</div>
